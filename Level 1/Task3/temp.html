@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <style>
+       div{
+        display: none;
+       }
+       #celsius,#fahrenheit{
+          text-align: center;
+          margin-top: 5px;
+          justify-content: center;
+          background-color: rgb(248, 61, 61);
+          width: 35%;
+          height: 30%;
+          border-radius: 20px;
+          box-shadow: rgba(12, 9, 9, 0.637) 0px 5px 15px;
+          padding: 10px;
+
+       }
+       #cal,#far{
+        width: 200px;
+        border-radius: 5px;
+        box-shadow: rgba(12, 9, 9, 0.637) 0px 5px 15px;
+
+       }
+       #btn,#btn1{
+        border-radius: 3px;
+        background-color: chartreuse;
+        width: 70px;
+        box-shadow: rgba(17, 17, 17, 0.637) 0px 5px 15px;
+       
+       }
+       #cel-to-far,#far-to-cel{
+        width: 200px;
+        
+
+       }
+       .button {
+  padding: 9px 10px;
+  font-size: 16px;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: rgba(17, 17, 17, 0.437) 0px 5px 15px;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: rgba(17, 17, 17, 0.437) 0px 5px 15px;
+  transform: translateY(4px);
+}
+       #res,h2,#res1{
+        color: white;
+       }
+      </style>
+      <script>
+       
+        console.log("sai");
+        function mult(){
+            num1 = document.getElementById("cal").value;
+            console.log("datt");
+            var ss = (num1 * 9/5)+32;
+            document.getElementById("res").innerHTML = ss + "°F";
+        }
+         
+        function faren(){
+            num1 = document.getElementById("far").value;
+            console.log("datt");
+            var bb = (num1 - 32)*5/9;
+            document.getElementById("res1").innerHTML = bb + "°C";
+        }
+         
+         function fartocel(){
+          document.getElementById("celsius").style.display = "none";
+         }
+
+      
+      
+          function caltofar() {
+  
+           var text = document.getElementById("fahrenheit");
+           var text2 = document.getElementById("celsius");
+           text2.style.display = "block";
+           text.style.display = "none";
+          }
+
+         function fartocel() {
+              var text = document.getElementById("fahrenheit");
+              var text2 = document.getElementById("celsius");
+   
+                text.style.display = "block";
+                 text2.style.display = "none";
+
+            }
+
+      </script>
+    </head>
+    <body>
+      
+     <center>
+       <input type="button" id="cel-to-far" class="button" onclick="caltofar()" value="celsius to fahrenheit">
+       <input type="button" id="far-to-cel" class="button"  onclick="fartocel()" value="fahrenheit to celsius">
+     <div id="celsius">
+      <h2>Temperature Converter </h2>
+      <h2>Celsius To Fahrenheit </h2>
+        <form>
+           <input type="text" id="cal" placeholder="enter celsius">
+           <input type="button" id="btn" onclick="mult()" value="submit"><br>
+        </form>
+
+       <p>The Result is : <br>
+        <span id = "res"></span>
+        </p>
+        <br>
+    </div>
+
+ <div id="fahrenheit">
+  <h2>Temperature Converter </h2>
+      <h2> Fahrenheit To Celsius </h2>
+     <form>
+       <input type="text" id="far" placeholder="enter fahrenheit">
+       <input type="button" id="btn1" onclick="faren()" value="submit"><br>
+     </form>
+
+   <p>The Result is : <br>
+    <span id = "res1"></span>
+    </p>
+    <br>
+   </div>
+     </center>
+    </body>
+</html>
